@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Result Page</title>
+
+
+<style>
+
+    /* Page */
+
+    body {
+        margin: 0;
+        padding: 0;
+
+        font-family: Arial, Helvetica, sans-serif;
+
+        background-color: #0b1020;
+
+        color: white;
+    }
+
+
+    /* Main Container */
+
+    .main {
+        width: 90%;
+        max-width: 900px;
+
+        margin: 50px auto;
+
+        padding: 30px;
+
+        background-color: #111a33;
+
+        border: 2px solid #00e5ff;
+
+        border-radius: 15px;
+
+        box-shadow: 0 0 15px #00e5ff;
+
+        box-sizing: border-box;
+    }
+
+
+    /* Heading */
+
+    .heading {
+        text-align: center;
+
+        margin-bottom: 30px;
+
+        padding-bottom: 15px;
+
+        border-bottom: 2px solid #00e5ff;
+    }
+
+
+    .heading h1 {
+        margin: 0;
+
+        color: #00e5ff;
+
+        font-size: 32px;
+
+        text-shadow: 0 0 8px #00e5ff;
+    }
+
+
+    /* Result Box */
+
+    .result-box {
+        margin-bottom: 25px;
+
+        padding: 20px;
+
+        background-color: #101820;
+
+        border: 2px solid #7fffd4;
+
+        border-radius: 10px;
+
+        box-shadow: 0 0 8px #7fffd4;
+    }
+
+
+    .result-box h2 {
+        margin: 0;
+
+        color: #7fffd4;
+
+        font-size: 20px;
+    }
+
+
+    /* Result */
+
+    .answer-box {
+        margin-bottom: 25px;
+
+        padding: 20px;
+
+        background-color: #101820;
+
+        border: 2px solid #bf5fff;
+
+        border-radius: 10px;
+
+        box-shadow: 0 0 8px #bf5fff;
+    }
+
+
+    .answer-box h2 {
+        margin-top: 0;
+
+        color: #bf5fff;
+
+        text-shadow: 0 0 6px #bf5fff;
+    }
+
+
+    .answer {
+        color: #ffffff;
+
+        font-size: 22px;
+
+        font-weight: bold;
+    }
+
+
+    /* Information */
+
+    .info-box {
+        padding: 20px;
+
+        background-color: #101820;
+
+        border: 2px solid #ff69b4;
+
+        border-radius: 10px;
+
+        box-shadow: 0 0 8px #ff69b4;
+    }
+
+
+    .info-box h2 {
+        margin-top: 0;
+
+        color: #ff69b4;
+
+        text-shadow: 0 0 6px #ff69b4;
+    }
+
+
+    .info-box p {
+        line-height: 1.8;
+
+        color: #e6e6e6;
+
+        font-size: 15px;
+    }
+
+
+    /* Highlight numbers */
+
+    .number {
+        color: #00e5ff;
+
+        font-weight: bold;
+    }
+
+
+    /* Mobile */
+
+    @media (max-width: 600px) {
+
+        .main {
+            width: 95%;
+
+            margin: 25px auto;
+
+            padding: 20px;
+        }
+
+
+        .heading h1 {
+            font-size: 25px;
+        }
+
+
+        .result-box h2,
+        .answer-box h2,
+        .info-box h2 {
+            font-size: 18px;
+        }
+
+
+        .answer {
+            font-size: 19px;
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+
+<div class="main">
+
+
+    <!-- Page Heading -->
+
+    <div class="heading">
+
+        <h1>
+            This Is Result Page....
+        </h1>
+
+    </div>
+
+
+    <!-- User Value -->
+
+    <div class="result-box">
+
+        <h2>
+            The value entered by user:
+            <span class="answer">{{lis}}</span>
+        </h2>
+
+    </div>
+
+
+    <!-- Result -->
+
+    <div class="answer-box">
+
+        <h2>
+            The result is:{{ans}}
+        </h2>
+{% if ans == 1 %}
+
+    <h2>Building Windows (Float Processed)</h2>
+
+{% elif ans == 2 %}
+
+    <h2>Building Windows (Non-Float Processed)</h2>
+
+{% elif ans == 3 %}
+
+    <h2>Vehicle Windows (Float Processed)</h2>
+
+{% elif ans == 4 %}
+
+    <h2>Vehicle Windows (Non-Float Processed)</h2>
+
+{% elif ans == 5 %}
+
+    <h2>Containers</h2>
+
+{% elif ans == 6 %}
+
+    <h2>Tableware</h2>
+
+{% elif ans == 7 %}
+
+    <h2>Headlamps</h2>
+
+{% else %}
+
+    <h2>Unknown Category</h2>
+
+{% endif %}
+
+
+    <!-- Result Information -->
+
+    <div class="info-box">
+
+        <h2>
+            Result Categories
+        </h2>
+
+        <p>
+
+            <span class="number">1:</span>
+            Building windows (float processed)
+            <br>
+
+            <span class="number">2:</span>
+            Building windows (non-float processed)
+            <br>
+
+            <span class="number">3:</span>
+            Vehicle windows (float processed)
+            <br>
+
+            <span class="number">4:</span>
+            Vehicle windows (non-float processed)
+            <br>
+
+            <span class="number">5:</span>
+            Containers
+            <br>
+
+            <span class="number">6:</span>
+            Tableware
+            <br>
+
+            <span class="number">7:</span>
+            Headlamps
+            <br>
+
+        </p>
+
+        <p>
+            <strong>Note:</strong>
+            No samples of type 4 exist in the standard dataset.
+        </p>
+
+    </div>
+
+
+</div>
+```
+
+</body>
+
+</html>

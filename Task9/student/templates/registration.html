@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Registration</title>
+
+    <style>
+
+        /* Page */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #10101a;
+            color: white;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Main Container */
+        .container {
+            width: 400px;
+            padding: 30px;
+            background-color: #181824;
+
+            border: 1px solid #00ffff;
+            border-radius: 10px;
+
+            box-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
+        }
+
+        /* Heading */
+        h1 {
+            text-align: center;
+            color: #00ffff;
+            margin-bottom: 30px;
+
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+        }
+
+        /* Form Group */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Labels */
+        label {
+            display: block;
+            margin-bottom: 8px;
+
+            color: #39ff14;
+            font-size: 15px;
+        }
+
+        /* Input Fields */
+        input {
+            width: 100%;
+            padding: 11px;
+            box-sizing: border-box;
+
+            background-color: #10101a;
+            color: white;
+
+            border: 1px solid #00ffff;
+            border-radius: 5px;
+
+            outline: none;
+            font-size: 15px;
+
+            transition: 0.3s;
+        }
+
+        /* Input Focus */
+        input:focus {
+            border-color: #39ff14;
+
+            box-shadow: 0 0 7px rgba(57, 255, 20, 0.5);
+        }
+
+        /* Register Button */
+        .register-btn {
+            width: 100%;
+            padding: 11px;
+
+            background-color: #00ffff;
+            color: #10101a;
+
+            border: none;
+            border-radius: 5px;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        /* Register Button Hover */
+        .register-btn:hover {
+            background-color: #39ff14;
+
+            box-shadow: 0 0 8px rgba(57, 255, 20, 0.6);
+        }
+
+        /* Success Message */
+        .success-message {
+            text-align: center;
+
+            color: #39ff14;
+            margin-bottom: 25px;
+
+            text-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
+        }
+
+        /* Home Button */
+        .home-btn {
+            display: block;
+            width: 100%;
+            padding: 11px;
+            box-sizing: border-box;
+
+            text-align: center;
+            text-decoration: none;
+
+            background-color: #00ffff;
+            color: #10101a;
+
+            border-radius: 5px;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        /* Home Button Hover */
+        .home-btn:hover {
+            background-color: #39ff14;
+
+            box-shadow: 0 0 8px rgba(57, 255, 20, 0.6);
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        {% if message %}
+
+            <!-- Success Message -->
+
+            <h2 class="success-message">
+                {{ message }}
+            </h2>
+
+            <!-- Go To Home -->
+
+            <a href="{% url 'home' %}" class="home-btn">
+                Go to Home
+            </a>
+
+
+        {% else %}
+
+            <!-- Registration Form -->
+
+            <h1>Student Registration</h1>
+
+            <form action="{% url 'login' %}" method="post">
+
+                {% csrf_token %}
+
+
+                <!-- Student ID -->
+
+                <div class="form-group">
+
+                    <label for="s_id">
+                        Student ID:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="s_id"
+                        name="s_id"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Student Name -->
+
+                <div class="form-group">
+
+                    <label for="s_name">
+                        S_Name:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="s_name"
+                        name="s_name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        S_Email:
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        S_Password:
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Student Branch -->
+
+                <div class="form-group">
+
+                    <label for="s_branch">
+                        S_Branch:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="s_branch"
+                        name="s_branch"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Register Button -->
+
+                <button
+                    type="submit"
+                    class="register-btn">
+
+                    Register
+
+                </button>
+
+            </form>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>
+

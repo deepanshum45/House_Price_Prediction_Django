@@ -1,0 +1,47 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Product</title>
+</head>
+
+<body>
+
+    <form action="{% url 'updateProduct' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="id" value="{{products.id}}">
+        <div> 
+            <label for="pname">Product Name</label>
+        </div>
+
+        <div>
+            <input type="text" id="pname" name="pname" value="{{products.pname}}">
+        </div>
+
+        <div>
+            <label for="pprice">Product Price</label>
+        </div>
+
+        <div>
+            <input type="number" id="pprice" name="pprice"value="{{products.pprice}}">
+        </div>
+
+        <div>
+            <label for="poffer">Product Offer</label>
+        </div>
+
+        <div><input type="number" id="poffer" name="poffer" value="{{products.poffer}}">
+        </div>
+
+        <div>
+            <input type="submit" value="Update">
+        </div>
+
+    </form>
+
+</body>
+
+</html>

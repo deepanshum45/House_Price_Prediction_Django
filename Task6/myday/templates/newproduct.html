@@ -1,0 +1,54 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Form</title>
+</head>
+
+<body>
+
+    <form action="{% url 'saveorder' %}" method='post'>
+
+        {% csrf_token %}
+
+        <div>
+            <label for="pname">Product Name:</label>
+        </div>
+
+        <div>
+            <input type="text" name="pname" id="pname">
+        </div>
+
+
+        <div>
+            <label for="pprice">Product Price:</label>
+        </div>
+
+        <div>
+            <input type="number" name="pprice" id="pprice">
+        </div>
+
+
+        <div>
+            <label for="poffer">Product Offer:</label>
+        </div>
+
+        <div>
+            <input type="number" name="poffer" id="poffer">
+        </div>
+
+
+        <div>
+            <input type="submit" value="Save">
+        </div>
+
+    </form>
+
+</body>
+
+</html>
+```

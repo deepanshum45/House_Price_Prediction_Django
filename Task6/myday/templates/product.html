@@ -1,0 +1,198 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Product List</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #111;
+        }
+
+        .main {
+            width: 90%;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: #00ffff;
+            font-size: 35px;
+            margin-bottom: 25px;
+            text-shadow: 0 0 5px #00ffff;
+        }
+
+        .buttons {
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            text-decoration: none;
+            color: #00ffff;
+            background-color: #181818;
+            border: 1px solid #00ffff;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        .btn:hover {
+            background-color: #00ffff;
+            color: #111;
+            box-shadow: 0 0 8px #00ffff;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #181818;
+        }
+
+        th {
+            padding: 14px;
+            color: #ff00ff;
+            font-size: 17px;
+            border: 1px solid #ff00ff;
+        }
+
+        td {
+            padding: 12px;
+            color: white;
+            font-size: 16px;
+            border: 1px solid #00ffff;
+        }
+
+        tr:hover td {
+            background-color: #222;
+        }
+
+        .action {
+            color: #00ffff;
+            text-decoration: none;
+        }
+
+        .action:hover {
+            color: #ff00ff;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="main">
+
+        <h1>Product List</h1>
+
+
+        <!-- CREATE -->
+
+        <div class="buttons">
+
+            <a href="{% url 'newproduct' %}" class="btn">
+                Create
+            </a>
+
+            <a href="{% url 'productlist' %}" class="btn">
+                Read
+            </a>
+
+        </div>
+
+
+        <!-- PRODUCT TABLE -->
+
+        <table>
+
+            <tr>
+
+                <th>ID</th>
+
+                <th>Product Name</th>
+
+                <th>Product Price</th>
+
+                <th>Product Offer</th>
+
+                <th>Update</th>
+
+                <th>Delete</th>
+
+            </tr>
+
+
+            {% for i in product %}
+
+            <tr>
+
+                <td>
+                    {{ i.id }}
+                </td>
+
+                <td>
+                    {{ i.pname }}
+                </td>
+
+                <td>
+                    {{ i.pprice }}
+                </td>
+
+                <td>
+                    {{ i.poffer }}
+                </td>
+
+
+                <!-- UPDATE -->
+
+                <td>
+
+                    <a class="action"
+                       href="{% url 'updateproductform' %}?id={{ i.id }}">
+
+                        Update
+
+                    </a>
+
+                </td>
+
+
+                <!-- DELETE -->
+
+                <td>
+
+                    <a class="action"
+                       href="{% url 'deleteProduct' %}?id={{ i.id }}">
+
+                        Delete
+
+                    </a>
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</body>
+
+</html>
+```

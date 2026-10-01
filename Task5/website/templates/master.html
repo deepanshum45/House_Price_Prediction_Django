@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Web Site Name</title>
+
+<style>
+
+    /* Page */
+    body {
+        margin: 0;
+        padding: 0;
+
+        font-family: Arial, Helvetica, sans-serif;
+
+        background-color: #f2f2f2;
+    }
+
+
+    /* Main Website Container */
+    .main {
+        width: 90%;
+        min-height: 335px;
+
+        margin: 20px auto;
+
+        background-color: white;
+
+        border: 3px solid #333333;
+    }
+
+
+    /* Header */
+    .header {
+        height: 70px;
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        background-color: #dbeafe;
+
+        border-bottom: 3px solid #333333;
+    }
+
+
+    .header h1 {
+        margin: 0;
+
+        font-size: 24px;
+
+        color: #1e3a8a;
+    }
+
+
+    /* Navigation */
+    .menu {
+        min-height: 60px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 20px;
+
+        padding: 0 20px;
+
+        background-color: #e0f2fe;
+
+        border-bottom: 3px solid #333333;
+    }
+
+
+    /* Navigation Links */
+    .menu a {
+        text-decoration: none;
+    }
+
+
+    /* Navigation Buttons */
+    .menu button {
+        width: 120px;
+        height: 35px;
+
+        background-color: white;
+
+        border: 2px solid #333333;
+        border-radius: 5px;
+
+        padding: 0 10px;
+
+        font-size: 14px;
+
+        cursor: pointer;
+
+        color: #333333;
+    }
+
+
+    /* Navigation Hover */
+    .menu button:hover {
+        background-color: #bfdbfe;
+
+        color: #1e3a8a;
+    }
+
+
+    /* Page Content */
+    .content {
+        min-height: 200px;
+
+        padding: 20px;
+
+        background-color: #fefce8;
+
+        border-bottom: 3px solid #333333;
+    }
+
+
+    /* Footer */
+    .footer {
+        min-height: 70px;
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        background-color: #dcfce7;
+    }
+
+
+    .footer p {
+        margin: 0;
+
+        font-size: 13px;
+
+        color: #166534;
+    }
+
+
+    /* Mobile Screen */
+    @media (max-width: 600px) {
+
+        .main {
+            width: 95%;
+        }
+
+
+        .menu {
+            flex-direction: column;
+
+            padding: 15px 0;
+
+            gap: 10px;
+        }
+
+
+        .menu button {
+            width: 200px;
+        }
+
+
+        .header h1 {
+            font-size: 20px;
+        }
+
+    }
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- Main Website Container -->
+
+<div class="main">
+
+
+    <!-- Header -->
+
+    <header class="header">
+
+        <h1>Web Site Name</h1>
+
+    </header>
+
+
+    <!-- Navigation Menu -->
+
+    <nav class="menu">
+
+        <a href="{% url 'home' %}">
+            <button type="button">Home</button>
+        </a>
+
+
+        <a href="{% url 'about' %}">
+            <button type="button">About</button>
+        </a>
+
+
+        <a href="{% url 'info' %}">
+            <button type="button">Info</button>
+        </a>
+
+    </nav>
+
+
+    <!-- Main Page Content -->
+
+    <main class="content">
+
+        {% block content %}
+
+        {% endblock %}
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer class="footer">
+
+        <p>
+            @ Copyright Deepanshu Mehra
+        </p>
+
+    </footer>
+
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test 1</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #17100a;
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 25px;
+            color: #ffb000;
+            text-shadow: 0 0 10px #ffb000;
+        }
+
+        main {
+            width: 70%;
+            margin: auto;
+        }
+
+        .question {
+            padding: 20px;
+            margin-top: 30px;
+            border: 1px solid #ffb000;
+            border-radius: 10px;
+            box-shadow: 0 0 12px #dc143c;
+        }
+
+        label {
+            display: block;
+            margin: 14px;
+        }
+
+        button {
+            padding: 10px 25px;
+            margin: 20px 10px;
+            border: 1px solid #ffb000;
+            border-radius: 7px;
+            background: transparent;
+            color: #ffb000;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ffb000;
+            color: #17100a;
+            box-shadow: 0 0 15px #dc143c;
+        }
+
+        a {
+            color: #ffb000;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>OTS - Test 1</h1>
+</header>
+
+<main>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <section class="question">
+
+        <h2>Question 1</h2>
+
+        <p>Which language is used to create a Django application?</p>
+
+        <label>
+            <input type="radio" name="answer" value="Java" required>
+            Java
+        </label>
+
+        <label>
+            <input type="radio" name="answer" value="Python">
+            Python
+        </label>
+
+        <label>
+            <input type="radio" name="answer" value="C++">
+            C++
+        </label>
+
+        <label>
+            <input type="radio" name="answer" value="HTML">
+            HTML
+        </label>
+
+    </section>
+
+    <button type="submit">Submit Test</button>
+
+</form>
+
+<a href="{% url 'dashboard' %}">Back to Dashboard</a>
+
+</main>
+
+</body>
+</html>

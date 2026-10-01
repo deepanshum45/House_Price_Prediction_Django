@@ -1,0 +1,280 @@
+{% extends 'master.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<style>
+
+    /* Laptop Container */
+
+    .laptop-container {
+        min-height: 300px;
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 25px;
+
+        padding: 30px 20px;
+
+        flex-wrap: wrap;
+    }
+
+
+    /* Laptop Card */
+
+    .laptop {
+        width: 160px;
+        height: 250px;
+
+        padding: 15px;
+
+        text-align: center;
+
+        box-sizing: border-box;
+
+        border-radius: 12px;
+
+        background-color: white;
+
+        transition: 0.3s;
+    }
+
+
+    /* Hover Effect */
+
+    .laptop:hover {
+        transform: translateY(-8px);
+
+        box-shadow: 0 0 15px currentColor;
+    }
+
+
+    /* Image Area */
+
+    .laptop-image {
+        width: 100%;
+        height: 190px;
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        background-color: white;
+
+        border-radius: 8px;
+
+        overflow: hidden;
+    }
+
+
+    /* Laptop Image */
+
+    .laptop-image img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+    }
+
+
+    /* Laptop Name */
+
+    .laptop h3 {
+        margin: 12px 0 0 0;
+
+        font-size: 16px;
+
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+    /* HP */
+
+    .laptop:nth-child(1) {
+        border: 3px solid #00ffff;
+
+        background-color: #eaffff;
+
+        box-shadow: 0 0 8px #00ffff;
+
+        color: #008b8b;
+    }
+
+
+    .laptop:nth-child(1) h3 {
+        color: #008b8b;
+    }
+
+
+    /* Dell */
+
+    .laptop:nth-child(2) {
+        border: 3px solid #ff69b4;
+
+        background-color: #fff0f6;
+
+        box-shadow: 0 0 8px #ff69b4;
+
+        color: #d63384;
+    }
+
+
+    .laptop:nth-child(2) h3 {
+        color: #d63384;
+    }
+
+
+    /* Lenovo */
+
+    .laptop:nth-child(3) {
+        border: 3px solid #39ff14;
+
+        background-color: #f0fff0;
+
+        box-shadow: 0 0 8px #39ff14;
+
+        color: #228b22;
+    }
+
+
+    .laptop:nth-child(3) h3 {
+        color: #228b22;
+    }
+
+
+    /* ASUS */
+
+    .laptop:nth-child(4) {
+        border: 3px solid #bf5fff;
+
+        background-color: #faf0ff;
+
+        box-shadow: 0 0 8px #bf5fff;
+
+        color: #8a2be2;
+    }
+
+
+    .laptop:nth-child(4) h3 {
+        color: #8a2be2;
+    }
+
+
+    /* Tablet Screen */
+
+    @media (max-width: 750px) {
+
+        .laptop-container {
+            gap: 20px;
+        }
+
+        .laptop {
+            width: 150px;
+            height: 240px;
+        }
+
+        .laptop-image {
+            height: 180px;
+        }
+
+    }
+
+
+    /* Mobile Screen */
+
+    @media (max-width: 450px) {
+
+        .laptop-container {
+            flex-direction: column;
+        }
+
+        .laptop {
+            width: 180px;
+            height: 260px;
+        }
+
+        .laptop-image {
+            height: 200px;
+        }
+
+    }
+
+</style>
+
+<!-- Laptop Section -->
+
+<div class="laptop-container">
+
+```
+<!-- HP Laptop -->
+
+<div class="laptop">
+
+    <div class="laptop-image">
+
+        <img src="{% static 'hp.jpg' %}"
+             alt="HP Laptop">
+
+    </div>
+
+    <h3>HP Laptop</h3>
+
+</div>
+
+
+<!-- Dell Laptop -->
+
+<div class="laptop">
+
+    <div class="laptop-image">
+
+        <img src="{% static 'dell.jpg' %}"
+             alt="Dell Laptop">
+
+    </div>
+
+    <h3>Dell Laptop</h3>
+
+</div>
+
+
+<!-- Lenovo Laptop -->
+
+<div class="laptop">
+
+    <div class="laptop-image">
+
+        <img src="{% static 'lenovo.jpg' %}"
+             alt="Lenovo Laptop">
+
+    </div>
+
+    <h3>Lenovo Laptop</h3>
+
+</div>
+
+
+<!-- ASUS Laptop -->
+
+<div class="laptop">
+
+    <div class="laptop-image">
+
+        <img src="{% static 'asus.jpg' %}"
+             alt="ASUS Laptop">
+
+    </div>
+
+    <h3>ASUS Laptop</h3>
+
+</div>
+```
+
+</div>
+
+{% endblock %}

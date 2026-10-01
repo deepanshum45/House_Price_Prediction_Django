@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shopping HUB</title>
+
+    <style>
+
+        /* BODY */
+        body {
+            margin: 10px;
+            font-family: Arial, sans-serif;
+            background-color: #050816;
+            color: white;
+        }
+
+
+        /* MAIN OUTER BOX */
+        .main {
+            border: 4px solid #00ffff;
+            width: 95%;
+            margin: auto;
+
+            background-color: #080b1f;
+
+            box-shadow:
+                0 0 10px #00ffff,
+                0 0 25px #00ffff,
+                inset 0 0 15px #001f2f;
+
+            border-radius: 10px;
+        }
+
+
+        /* FIRST BLOCK */
+        .header {
+            height: 140px;
+
+            border-bottom: 4px solid #ff00ff;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 32px;
+            font-weight: bold;
+
+            color: #00ffff;
+
+            text-shadow:
+                0 0 5px #00ffff,
+                0 0 15px #00ffff,
+                0 0 30px #00ffff;
+
+            background-color: #0a0e27;
+        }
+
+
+        /* SECOND BLOCK */
+        .middle {
+            height: 200px;
+
+            border-bottom: 4px solid #00ff66;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            gap: 15px;
+
+            background-color: #070b20;
+        }
+
+
+        /* THREE BOXES */
+        .box {
+            width: 270px;
+            height: 150px;
+
+            border: 3px solid #ff00ff;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            background-color: #0b102b;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 0 8px #ff00ff,
+                0 0 18px #ff00ff,
+                inset 0 0 10px #250025;
+
+            transition: 0.3s;
+        }
+
+
+        /* BOX HOVER */
+        .box:hover {
+            transform: translateY(-5px);
+
+            border-color: #00ffff;
+
+            box-shadow:
+                0 0 10px #00ffff,
+                0 0 25px #00ffff,
+                0 0 40px #00ffff,
+                inset 0 0 15px #003333;
+        }
+
+
+        /* IMAGES */
+        .box img {
+            width: 180px;
+            height: 80px;
+
+            object-fit: contain;
+
+            filter:
+                drop-shadow(0 0 5px white)
+                drop-shadow(0 0 10px #00ffff);
+        }
+
+
+        /* BUTTONS */
+        .box button {
+            margin-top: 10px;
+
+            padding: 8px 20px;
+
+            font-size: 15px;
+
+            cursor: pointer;
+
+            color: white;
+
+            background-color: #090d24;
+
+            border: 2px solid #00ffff;
+
+            border-radius: 5px;
+
+            box-shadow:
+                0 0 5px #00ffff,
+                0 0 12px #00ffff;
+
+            transition: 0.3s;
+        }
+
+
+        /* BUTTON HOVER */
+        .box button:hover {
+
+            color: #000;
+
+            background-color: #00ffff;
+
+            box-shadow:
+                0 0 10px #00ffff,
+                0 0 25px #00ffff,
+                0 0 40px #00ffff;
+        }
+
+
+        /* THIRD BLOCK */
+        .bottom {
+            height: 150px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: #050817;
+        }
+
+
+        /* VIDEO */
+        .bottom video {
+            width: 660px;
+            height: 85px;
+
+            border: 4px solid #00ff66;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 0 8px #00ff66,
+                0 0 20px #00ff66,
+                0 0 35px #00ff66;
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="main">
+
+
+        <!-- FIRST BLOCK -->
+
+        <div class="header">
+
+            Shopping HUB
+
+        </div>
+
+
+        <!-- SECOND BLOCK -->
+
+        <div class="middle">
+
+
+            <!-- AMAZON -->
+
+            <div class="box">
+
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Amazon_logo.svg"
+                    alt="Amazon">
+
+                <a href="https://www.amazon.in/" target="_blank">
+
+                    <button>
+                        Visit Amazon
+                    </button>
+
+                </a>
+
+            </div>
+
+
+            <!-- FLIPKART -->
+
+            <div class="box">
+
+                <img
+                    src="https://www.citypng.com/public/uploads/preview/flipkart-logo-hd-transparent-background-701751694706841of8tlyo4n0.png"
+                    alt="Flipkart">
+
+                <a href="https://www.flipkart.com/" target="_blank">
+
+                    <button>
+                        Visit Flipkart
+                    </button>
+
+                </a>
+
+            </div>
+
+
+            <!-- MEESHO -->
+
+            <div class="box">
+
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Meesho_logo.png"
+                    alt="Meesho">
+
+                <a href="https://www.meesho.com/" target="_blank">
+
+                    <button>
+                        Visit Meesho
+                    </button>
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- THIRD BLOCK -->
+
+        <div class="bottom">
+
+            <video controls>
+
+                <source
+                    src="{% static 'vedio.mp4' %}"
+                    type="video/mp4">
+
+                Your browser does not support the video tag.
+
+            </video>
+
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

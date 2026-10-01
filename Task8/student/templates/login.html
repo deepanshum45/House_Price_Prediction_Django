@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login Page</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #10101a;
+            color: white;
+        }
+
+        .login-container {
+            width: 350px;
+            margin: 100px auto;
+            padding: 30px;
+
+            background-color: #181824;
+
+            border: 1px solid #00ffff;
+            border-radius: 10px;
+
+            box-shadow: 0 0 15px #00ffff;
+        }
+
+        h1 {
+            text-align: center;
+            color: #00ffff;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #39ff14;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+
+            box-sizing: border-box;
+
+            background-color: #10101a;
+            color: white;
+
+            border: 1px solid #00ffff;
+            border-radius: 5px;
+
+            outline: none;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            box-shadow: 0 0 8px #00ffff;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 11px;
+
+            background-color: #00ffff;
+            color: #10101a;
+
+            border: none;
+            border-radius: 5px;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #39ff14;
+            box-shadow: 0 0 10px #39ff14;
+        }
+
+        .error {
+            display: block;
+            margin-top: 15px;
+            text-align: center;
+            color: #ff3131;
+        }
+
+        .signup {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .signup a {
+            color: #00ffff;
+            text-decoration: none;
+        }
+
+        .signup a:hover {
+            color: #39ff14;
+            text-shadow: 0 0 8px #39ff14;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <h1>Login Page</h1>
+
+        <form action="{% url 'loginvalidation' %}" method="post">
+
+            {% csrf_token %}
+
+            <div class="form-group">
+
+                <label for="username">Username:</label>
+
+                <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    required
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="password">Password:</label>
+
+                <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    required
+                >
+
+            </div>
+
+            <input type="submit" value="Login">
+
+            <span class="error">{{ erg }}</span>
+
+        </form>
+
+        <div class="signup">
+            <a href="{% url 'signup' %}">
+                Create New User
+            </a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

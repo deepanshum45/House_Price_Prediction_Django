@@ -1,0 +1,157 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Glass Classification Result</title>
+
+    <style>
+        body {
+            background-color: #0b1020;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 700px;
+            margin: auto;
+            background-color: #111a33;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px #00e5ff;
+        }
+
+        h1 {
+            color: #00e5ff;
+        }
+
+        .result {
+            color: #7fffd4;
+            font-size: 24px;
+            margin: 20px;
+        }
+
+        .category {
+            margin-top: 25px;
+            padding: 20px;
+            border: 2px solid #ff4fd8;
+            border-radius: 12px;
+            color: #ffffff;
+        }
+
+        .category h2 {
+            color: #ff4fd8;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Glass Classification Result</h1>
+
+    <p>Your Input:</p>
+    <div class="result">
+        {{ lis }}
+    </div>
+
+    <p>Predicted Result:</p>
+    <div class="result">
+        {{ ans }}
+    </div>
+
+
+    <!-- IF ELSE CONDITIONS -->
+
+    {% if ans == 1 %}
+
+        <div class="category">
+            <h2>Building Windows (Float Processed)</h2>
+            <p>
+                This glass type is commonly used for building windows
+                and is produced using the float glass process.
+            </p>
+        </div>
+
+    {% elif ans == 2 %}
+
+        <div class="category">
+            <h2>Building Windows (Non-Float Processed)</h2>
+            <p>
+                This glass type is used for building windows but
+                is not produced using the float process.
+            </p>
+        </div>
+
+    {% elif ans == 3 %}
+
+        <div class="category">
+            <h2>Vehicle Windows (Float Processed)</h2>
+            <p>
+                This glass type is used for vehicle windows
+                and is produced using the float process.
+            </p>
+        </div>
+
+    {% elif ans == 4 %}
+
+        <div class="category">
+            <h2>Vehicle Windows (Non-Float Processed)</h2>
+            <p>
+                This category represents non-float processed
+                glass used for vehicle windows.
+            </p>
+        </div>
+
+    {% elif ans == 5 %}
+
+        <div class="category">
+            <h2>Containers</h2>
+            <p>
+                This type of glass is commonly used for making
+                bottles and other glass containers.
+            </p>
+        </div>
+
+    {% elif ans == 6 %}
+
+        <div class="category">
+            <h2>Tableware</h2>
+            <p>
+                This type of glass is used for tableware such as
+                plates, glasses and other dining items.
+            </p>
+        </div>
+
+    {% elif ans == 7 %}
+
+        <div class="category">
+            <h2>Headlamps</h2>
+            <p>
+                This type of glass is commonly used in
+                automobile headlamps.
+            </p>
+        </div>
+
+    {% else %}
+
+        <div class="category">
+            <h2>Unknown Category</h2>
+            <p>
+                The glass category could not be identified.
+            </p>
+        </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>
+```

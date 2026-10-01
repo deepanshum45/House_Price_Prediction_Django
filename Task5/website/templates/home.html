@@ -1,0 +1,280 @@
+{% extends 'master.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<style>
+
+    /* Mobile Container */
+
+    .mobile-container {
+        min-height: 300px;
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 25px;
+
+        padding: 30px 20px;
+
+        flex-wrap: wrap;
+    }
+
+
+    /* Mobile Card */
+
+    .mobile {
+        width: 160px;
+        height: 250px;
+
+        padding: 15px;
+
+        text-align: center;
+
+        border-radius: 12px;
+
+        background-color: white;
+
+        box-sizing: border-box;
+
+        transition: 0.3s;
+    }
+
+
+    /* Hover Effect */
+
+    .mobile:hover {
+        transform: translateY(-8px);
+
+        box-shadow: 0 0 15px currentColor;
+    }
+
+
+    /* Image Area */
+
+    .mobile-image {
+        width: 100%;
+        height: 190px;
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        background-color: white;
+
+        border-radius: 8px;
+
+        overflow: hidden;
+    }
+
+
+    /* Mobile Image */
+
+    .mobile-image img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+    }
+
+
+    /* Mobile Name */
+
+    .mobile h3 {
+        margin: 12px 0 0 0;
+
+        font-size: 16px;
+
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+    /* iPhone */
+
+    .mobile:nth-child(1) {
+        border: 3px solid #00ffff;
+
+        background-color: #eaffff;
+
+        box-shadow: 0 0 8px #00ffff;
+
+        color: #008b8b;
+    }
+
+
+    .mobile:nth-child(1) h3 {
+        color: #008b8b;
+    }
+
+
+    /* Samsung */
+
+    .mobile:nth-child(2) {
+        border: 3px solid #ff69b4;
+
+        background-color: #fff0f6;
+
+        box-shadow: 0 0 8px #ff69b4;
+
+        color: #d63384;
+    }
+
+
+    .mobile:nth-child(2) h3 {
+        color: #d63384;
+    }
+
+
+    /* OnePlus */
+
+    .mobile:nth-child(3) {
+        border: 3px solid #39ff14;
+
+        background-color: #f0fff0;
+
+        box-shadow: 0 0 8px #39ff14;
+
+        color: #228b22;
+    }
+
+
+    .mobile:nth-child(3) h3 {
+        color: #228b22;
+    }
+
+
+    /* Vivo */
+
+    .mobile:nth-child(4) {
+        border: 3px solid #bf5fff;
+
+        background-color: #faf0ff;
+
+        box-shadow: 0 0 8px #bf5fff;
+
+        color: #8a2be2;
+    }
+
+
+    .mobile:nth-child(4) h3 {
+        color: #8a2be2;
+    }
+
+
+    /* Mobile Screen */
+
+    @media (max-width: 750px) {
+
+        .mobile-container {
+            gap: 20px;
+        }
+
+        .mobile {
+            width: 150px;
+            height: 240px;
+        }
+
+        .mobile-image {
+            height: 180px;
+        }
+
+    }
+
+
+    /* Small Screen */
+
+    @media (max-width: 450px) {
+
+        .mobile-container {
+            flex-direction: column;
+        }
+
+        .mobile {
+            width: 180px;
+            height: 260px;
+        }
+
+        .mobile-image {
+            height: 200px;
+        }
+
+    }
+
+</style>
+
+<!-- Mobile Section -->
+
+<div class="mobile-container">
+
+
+<!-- iPhone -->
+
+<div class="mobile">
+
+    <div class="mobile-image">
+
+        <img src="{% static 'download.jpg' %}"
+             alt="iPhone">
+
+    </div>
+
+    <h3>iPhone</h3>
+
+</div>
+
+
+<!-- Samsung -->
+
+<div class="mobile">
+
+    <div class="mobile-image">
+
+        <img src="{% static 'download (1).jpg' %}"
+             alt="Samsung">
+
+    </div>
+
+    <h3>Samsung</h3>
+
+</div>
+
+
+<!-- OnePlus -->
+
+<div class="mobile">
+
+    <div class="mobile-image">
+
+        <img src="{% static 'images.jpg' %}"
+             alt="OnePlus">
+
+    </div>
+
+    <h3>OnePlus</h3>
+
+</div>
+
+
+<!-- Vivo -->
+
+<div class="mobile">
+
+    <div class="mobile-image">
+
+        <img src="{% static 'download (1).jpg' %}"
+             alt="Vivo">
+
+    </div>
+
+    <h3>Vivo</h3>
+
+</div>
+
+
+</div>
+
+{% endblock %}

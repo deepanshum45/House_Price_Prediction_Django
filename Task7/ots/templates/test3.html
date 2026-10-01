@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test 3</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #081515;
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 25px;
+            color: #00e6b8;
+            text-shadow: 0 0 10px #00e6b8;
+        }
+
+        main {
+            width: 70%;
+            margin: auto;
+        }
+
+        .question {
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #00e6b8;
+            border-radius: 10px;
+            box-shadow: 0 0 12px #8a2be2;
+        }
+
+        label {
+            display: block;
+            margin: 14px;
+        }
+
+        button {
+            padding: 10px 25px;
+            margin: 20px 10px;
+            border: 1px solid #00e6b8;
+            border-radius: 7px;
+            background: transparent;
+            color: #00e6b8;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #00e6b8;
+            color: #081515;
+            box-shadow: 0 0 15px #8a2be2;
+        }
+
+        a {
+            color: #00e6b8;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>OTS - Test 3</h1>
+</header>
+
+<main>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <section class="question">
+        <h2>Question 1</h2>
+        <p>Which language is used to create a Django application?</p>
+
+        <label><input type="radio" name="q1" value="Java" required> Java</label>
+        <label><input type="radio" name="q1" value="Python"> Python</label>
+        <label><input type="radio" name="q1" value="C++"> C++</label>
+        <label><input type="radio" name="q1" value="HTML"> HTML</label>
+    </section>
+
+    <section class="question">
+        <h2>Question 2</h2>
+        <p>Which HTML tag is used for a paragraph?</p>
+
+        <label><input type="radio" name="q2" value="h1" required> &lt;h1&gt;</label>
+        <label><input type="radio" name="q2" value="p"> &lt;p&gt;</label>
+        <label><input type="radio" name="q2" value="div"> &lt;div&gt;</label>
+        <label><input type="radio" name="q2" value="br"> &lt;br&gt;</label>
+    </section>
+
+    <section class="question">
+        <h2>Question 3</h2>
+        <p>Which symbol is used for a comment in Python?</p>
+
+        <label><input type="radio" name="q3" value="//" required> //</label>
+        <label><input type="radio" name="q3" value="#"> #</label>
+        <label><input type="radio" name="q3" value="/*"> /*</label>
+        <label><input type="radio" name="q3" value="--"> --</label>
+    </section>
+
+    <button type="submit">Submit Test</button>
+
+</form>
+
+<a href="{% url 'dashboard' %}">Back to Dashboard</a>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test History</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0b1512;
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            padding: 30px;
+            color: #42f59b;
+            text-shadow: 0 0 10px #42f59b;
+        }
+
+        main {
+            width: 80%;
+            margin: 40px auto;
+        }
+
+        .box {
+            padding: 25px;
+            border: 1px solid #42f59b;
+            border-radius: 12px;
+            box-shadow: 0 0 12px #00bfff;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border: 1px solid #42f59b;
+        }
+
+        th {
+            color: #42f59b;
+        }
+
+        .performance {
+            margin-top: 25px;
+            padding: 15px;
+            border: 1px solid #42f59b;
+            border-radius: 8px;
+        }
+
+        button {
+            padding: 10px 25px;
+            margin-top: 20px;
+            border: 1px solid #42f59b;
+            border-radius: 7px;
+            background: transparent;
+            color: #42f59b;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #42f59b;
+            color: #0b1512;
+            box-shadow: 0 0 15px #00bfff;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>OTS - Test History</h1>
+</header>
+
+<main>
+
+    <section class="box">
+
+        <h2>Your Test History</h2>
+
+        <table>
+
+            <tr>
+                <th>Test</th>
+                <th>Total Questions</th>
+                <th>Score</th>
+            </tr>
+
+            {% for test in tests %}
+
+            <tr>
+                <td>{{ test.test_name }}</td>
+                <td>{{ test.total_questions }}</td>
+                <td>{{ test.score }}</td>
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+        <section class="performance">
+
+            <h2>Performance</h2>
+
+            <p>
+                Total Score:
+                {{ total_score }} / {{ total_questions }}
+            </p>
+
+        </section>
+
+        <a href="{% url 'dashboard' %}">
+            <button type="button">Back to Dashboard</button>
+        </a>
+
+    </section>
+
+</main>
+
+</body>
+</html>
