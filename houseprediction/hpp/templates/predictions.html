@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+    <header>
+        <h1>House Price Prediction</h1>
+        <h2>Enter House Details</h2>
+    </header>
+
+    <main>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label>Bedrooms:</label>
+            <input type="number" name="bedrooms" step="any" required>
+            <br><br>
+
+            <label>Bathrooms:</label>
+            <input type="number" name="bathrooms" step="any" required>
+            <br><br>
+
+            <label>Sqft Living:</label>
+            <input type="number" name="sqft_living" required>
+            <br><br>
+
+            <label>Sqft Lot:</label>
+            <input type="number" name="sqft_lot" required>
+            <br><br>
+
+            <label>Floors:</label>
+            <input type="number" name="floors" step="any" required>
+            <br><br>
+
+            <label>Waterfront:</label>
+            <input type="number" name="waterfront" min="0" max="1" required>
+            <br><br>
+
+            <label>View:</label>
+            <input type="number" name="view" min="0" max="4" required>
+            <br><br>
+
+            <label>Sqft Above:</label>
+            <input type="number" name="sqft_above" required>
+            <br><br>
+
+            <label>Sqft Basement:</label>
+            <input type="number" name="sqft_basement" required>
+            <br><br>
+
+            <label>Sqft Living 15:</label>
+            <input type="number" name="sqft_living15" required>
+            <br><br>
+
+            <label>Sqft Lot 15:</label>
+            <input type="number" name="sqft_lot15" required>
+            <br><br>
+
+            <input type="submit" value="Predict House Price">
+        </form>
+
+        {% if price %}
+            <h2>Predicted House Price: ${{ price }}</h2>
+        {% endif %}
+
+        <br>
+
+        <a href="{% url 'dashboard' %}">Back to Dashboard</a>
+
+    </main>
+
+    <footer>
+        <p>House Price Prediction Project</p>
+    </footer>
+
+</body>
+</html>

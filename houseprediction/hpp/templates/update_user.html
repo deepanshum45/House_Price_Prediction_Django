@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update User - House Price Prediction</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+    <header>
+        <h1>House Price Prediction</h1>
+        <h2>Update User</h2>
+    </header>
+
+    <main>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label>Name:</label>
+            <input type="text" name="name" value="{{ user.name }}" required>
+            <br><br>
+
+            <label>Username:</label>
+            <input type="text" name="username" value="{{ user.username }}" required>
+            <br><br>
+
+            <label>Email:</label>
+            <input type="email" name="email" value="{{ user.email }}" required>
+            <br><br>
+
+            <label>Phone:</label>
+            <input type="text" name="phone" value="{{ user.phone }}" required>
+            <br><br>
+
+            <label>Password:</label>
+            <input type="password" name="password" value="{{ user.password }}" required>
+            <br><br>
+
+            <input type="submit" value="Update User">
+        </form>
+
+        <br>
+
+        <a href="{% url 'userlist' %}">Back to User List</a>
+
+    </main>
+
+    <footer>
+        <p>House Price Prediction Project</p>
+    </footer>
+
+</body>
+</html>
